@@ -15,6 +15,10 @@ h1 {
     padding-top: 60px;
 }
 
+p {
+    text-align: center;
+}
+
 select {
     padding: 10px;
     font-size: 16px;
