@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>112 Days Study Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>112 Days Study Challenge</h1>
+            <p>Track your progress from September to January</p>
+        </header>
+              
+        <section class="task-list">
+            <label for="date-range">Select a Date Range:</label>
+            <select id="date-range" onchange="showTasks()">
+                <option value="">-- Select a Range --</option>
+                <option value="september">September 23rd - October 20th</option>
+                <option value="october">October 21st - November 17th</option>
+                <option value="november">November 18th - December 15th</option>
+                <option value="december">December 16th - January 12th</option>
+            </select>
+        
+            <div id="task-display" style="display: none;">
+                <div class="month" id="september">
+                <h2>September 23rd - October  20th</h2>
+                <div class="week">
+                    <h3>Week 1: Data Analysis Fundamentals</h3>
+                    <ul id="week-1-tasks">
+                        <li id="task-1">
+                            <span class="date">Mon. 23 Sep</span> - Overview of data analysis (Read theory, no tools yet)
+                            <button class="complete" onclick="markTaskCompleted('task-1')">Completed</button>
+                        </li>
+                        <li id="task-2">
+                            <span class="date">Tue. 24 Sep</span> - Introduction to Excel – Interface and basic functions.
+                            <button class="complete" onclick="markTaskCompleted('task-2')">Completed</button>
+                        </li>
+                        <li id="task-3">
+                            <span class="date">Wed. 25 Sep</span> - Excel formulas and cell referencing.
+                            <button class="complete" onclick="markTaskCompleted('task-3')">Completed</button>
+                        </li>
+                        <li id="task-4">
+                            <span class="date">Thu. 26 Sep</span> - Basic calculations in Excel (sum, average, min, max).
+                            <button class="complete" onclick="markTaskCompleted('task-4')">Completed</button>
+                        </li>
+                        <li id="task-5">
+                            <span class="date">Fri. 27 Sep</span> - Sorting and filtering data in Excel.
+                            <button class="complete" onclick="markTaskCompleted('task-5')">Completed</button>
+                        </li>
+                        <li id="task-6">
+                            <span class="date">Sat. 28 Sep</span> - Conditional formatting and creating basic charts.
+                            <button class="complete" onclick="markTaskCompleted('task-6')">Completed</button>
+                        </li>
+                        <li id="task-7">
+                            <span class="date">Sun. 29 Sep</span> - Review and hands-on practice (work on a small dataset).
+                            <button class="complete" onclick="markTaskCompleted('task-7')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 2: Intermediate Excel and Data Cleaning</h3>
+                    <ul id="week-2-tasks">
+                        <li id="task-8">
+                            <span class="date">Mon. 30 Sep</span> - Functions: VLOOKUP, HLOOKUP, and XLOOKUP.
+                            <button class="complete" onclick="markTaskCompleted('task-8')">Completed</button>
+                        </li>
+                        <li id="task-9">
+                            <span class="date">Tue. 1 Oct</span> - Pivot tables basics.
+                            <button class="complete" onclick="markTaskCompleted('task-9')">Completed</button>
+                        </li>
+                        <li id="task-10">
+                            <span class="date">Wed. 2 Oct</span> - Cleaning data in Excel – Removing duplicates, handling empty cells.
+                            <button class="complete" onclick="markTaskCompleted('task-10')">Completed</button>
+                        </li>
+                        <li id="task-11">
+                            <span class="date">Thu. 3 Oct</span> - Text functions in Excel (LEFT, RIGHT, MID, LEN, FIND, etc.)
+                            <button class="complete" onclick="markTaskCompleted('task-11')">Completed</button>
+                        </li>
+                        <li id="task-12">
+                            <span class="date">Fri. 4 Oct</span> - Date functions in Excel (DATE, TODAY, DATEDIF).
+                            <button class="complete" onclick="markTaskCompleted('task-12')">Completed</button>
+                        </li>
+                        <li id="task-13">
+                            <span class="date">Sat. 5 Oct</span> - Introduction to CSV files and importing/exporting in Excel.
+                            <button class="complete" onclick="markTaskCompleted('task-13')">Completed</button>
+                        </li>
+                        <li id="task-14">
+                            <span class="date">Sun. 6 Oct</span> - Practice on data cleaning with a dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-14')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 3: Basic Data Visualization with Excel</h3>
+                    <ul id="week-3-tasks">
+                        <li id="task-15">
+                            <span class="date">Mon. 7 Oct</span> - Introduction to data visualization concepts.
+                            <button class="complete" onclick="markTaskCompleted('task-15')">Completed</button>
+                        </li>
+                        <li id="task-16">
+                            <span class="date">Tue. 8 Oct</span> - Creating bar charts, line charts, and pie charts.
+                            <button class="complete" onclick="markTaskCompleted('task-16')">Completed</button>
+                        </li>
+                        <li id="task-17">
+                            <span class="date">Wed. 9 Oct</span> - Understanding histograms and scatter plots.
+                            <button class="complete" onclick="markTaskCompleted('task-17')">Completed</button>
+                        </li>
+                        <li id="task-18">
+                            <span class="date">Thu. 10 Oct</span> - Formatting charts in Excel for better presentation.
+                            <button class="complete" onclick="markTaskCompleted('task-18')">Completed</button>
+                        </li>
+                        <li id="task-19">
+                            <span class="date">Fri. 11 Oct</span> - Creating dashboards in Excel.
+                            <button class="complete" onclick="markTaskCompleted('task-19')">Completed</button>
+                        </li>
+                        <li id="task-20">
+                            <span class="date">Sat. 12 Oct</span> - Hands-on project – Build a basic dashboard.
+                            <button class="complete" onclick="markTaskCompleted('task-20')">Completed</button>
+                        </li>
+                        <li id="task-21">
+                            <span class="date">Sun. 13 Oct</span> - Review and project work.
+                            <button class="complete" onclick="markTaskCompleted('task-21')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 4: Introduction to Statistics</h3>
+                    <ul id="week-4-tasks">
+                        <li id="task-22">
+                            <span class="date">Mon. 14 Oct</span> - Understanding mean, median, mode.
+                            <button class="complete" onclick="markTaskCompleted('task-22')">Completed</button>
+                        </li>
+                        <li id="task-23">
+                            <span class="date">Tue. 15 Oct</span> - Introduction to standard deviation and variance.
+                            <button class="complete" onclick="markTaskCompleted('task-23')">Completed</button>
+                        </li>
+                        <li id="task-24">
+                            <span class="date">Wed. 16 Oct</span> - Probability basics for data analysis.
+                            <button class="complete" onclick="markTaskCompleted('task-24')">Completed</button>
+                        </li>
+                        <li id="task-25">
+                            <span class="date">Thu. 17 Oct</span> - Introduction to correlation and covariance.
+                            <button class="complete" onclick="markTaskCompleted('task-25')">Completed</button>
+                        </li>
+                        <li id="task-26">
+                            <span class="date">Fri. 18 Oct</span> - Hands-on: Applying statistics in Excel.
+                            <button class="complete" onclick="markTaskCompleted('task-26')">Completed</button>
+                        </li>
+                        <li id="task-27">
+                            <span class="date">Sat. 19 Oct</span> - Quiz and small project: Statistical analysis in Excel.
+                            <button class="complete" onclick="markTaskCompleted('task-27')">Completed</button>
+                        </li>
+                        <li id="task-28">
+                            <span class="date">Sun. 20 Oct</span> - Review and revision.
+                            <button class="complete" onclick="markTaskCompleted('task-28')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="month" id="october" style="display: none;">
+                <h2>October 21st - November 17th</h2>
+                <div class="week">
+                    <h3>Week 1: Python Basics</h3>
+                    <ul id="week-1-tasks">
+                        <li id="task-29">
+                            <span class="date">Mon. 21 Oct</span> - Introduction to Python, installing Jupyter notebooks.
+                            <button class="complete" onclick="markTaskCompleted('task-29')">Completed</button>
+                        </li>
+                        <li id="task-30">
+                            <span class="date">Tue. 22 Oct</span> - Python variables, data types, and basic operations.
+                            <button class="complete" onclick="markTaskCompleted('task-30')">Completed</button>
+                        </li>
+                        <li id="task-31">
+                            <span class="date">Wed. 23 Oct</span> - Lists, tuples, sets, and dictionaries in Python.
+                            <button class="complete" onclick="markTaskCompleted('task-31')">Completed</button>
+                        </li>
+                        <li id="task-32">
+                            <span class="date">Thu. 24 Oct</span> - Control structures (if, else, for, while).
+                            <button class="complete" onclick="markTaskCompleted('task-32')">Completed</button>
+                        </li>
+                        <li id="task-33">
+                            <span class="date">Fri. 25 Oct</span> - Functions and modules in Python.
+                            <button class="complete" onclick="markTaskCompleted('task-33')">Completed</button>
+                        </li>
+                        <li id="task-34">
+                            <span class="date">Sat. 26 Oct</span> - Reading and writing CSV files using Python.
+                            <button class="complete" onclick="markTaskCompleted('task-34')">Completed</button>
+                        </li>
+                        <li id="task-35">
+                            <span class="date">Sun. 27 Oct</span> - Review and practice basic Python exercises.
+                            <button class="complete" onclick="markTaskCompleted('task-35')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 2: Numpy and Pandas for Data Manipulation</h3>
+                    <ul id="week-2-tasks">
+                        <li id="task-36">
+                            <span class="date">Mon. 28 Oct</span> - Introduction to Numpy – Creating arrays and operations.
+                            <button class="complete" onclick="markTaskCompleted('task-36')">Completed</button>
+                        </li>
+                        <li id="task-37">
+                            <span class="date">Tue. 29 Oct</span> - Numpy – Array slicing and reshaping.
+                            <button class="complete" onclick="markTaskCompleted('task-37')">Completed</button>
+                        </li>
+                        <li id="task-38">
+                            <span class="date">Wed. 30 Oct</span> - Introduction to Pandas – Series and DataFrames.
+                            <button class="complete" onclick="markTaskCompleted('task-38')">Completed</button>
+                        </li>
+                        <li id="task-39">
+                            <span class="date">Thu. 31 Oct</span> - Loading datasets with Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-39')">Completed</button>
+                        </li>
+                        <li id="task-40">
+                            <span class="date">Fri. 1 Nov</span> - Data manipulation with Pandas (sorting, filtering, grouping).
+                            <button class="complete" onclick="markTaskCompleted('task-40')">Completed</button>
+                        </li>
+                        <li id="task-41">
+                            <span class="date">Sat. 2 Nov</span> - Handling missing data in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-41')">Completed</button>
+                        </li>
+                        <li id="task-42">
+                            <span class="date">Sun. 3 Nov</span> - Review and practice data manipulation.
+                            <button class="complete" onclick="markTaskCompleted('task-42')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 3: Data Analysis with Pandas</h3>
+                    <ul id="week-3-tasks">
+                        <li id="task-43">
+                            <span class="date">Mon. 4 Nov</span> - Combining DataFrames (merging, joining).
+                            <button class="complete" onclick="markTaskCompleted('task-43')">Completed</button>
+                        </li>
+                        <li id="task-44">
+                            <span class="date">Tue. 5 Nov</span> - Descriptive statistics with Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-44')">Completed</button>
+                        </li>
+                        <li id="task-45">
+                            <span class="date">Wed. 6 Nov</span> - Groupby and aggregate functions in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-45')">Completed</button>
+                        </li>
+                        <li id="task-46">
+                            <span class="date">Thu. 7 Nov</span> - Applying functions across rows and columns in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-46')">Completed</button>
+                        </li>
+                        <li id="task-47">
+                            <span class="date">Fri. 8 Nov</span> - Reshaping data with pivot tables.
+                            <button class="complete" onclick="markTaskCompleted('task-47')">Completed</button>
+                        </li>
+                        <li id="task-48">
+                            <span class="date">Sat. 9 Nov</span> - Project: Analyze a dataset using Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-48')">Completed</button>
+                        </li>
+                        <li id="task-49">
+                            <span class="date">Sun. 10 Nov</span> - Review project and feedback.
+                            <button class="complete" onclick="markTaskCompleted('task-49')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 4: Data Visualization with Matplotlib and Seaborn</h3>
+                    <ul id="week-4-tasks">
+                        <li id="task-50">
+                            <span class="date">Mon. 11 Nov</span> - Introduction to Matplotlib – Basic plotting.
+                            <button class="complete" onclick="markTaskCompleted('task-50')">Completed</button>
+                        </li>
+                        <li id="task-51">
+                            <span class="date">Tue. 12 Nov</span> - Customizing plots in Matplotlib (labels, titles, and styles).
+                            <button class="complete" onclick="markTaskCompleted('task-51')">Completed</button>
+                        </li>
+                        <li id="task-52">
+                            <span class="date">Wed. 13 Nov</span> - Creating bar plots, line plots, and histograms.
+                            <button class="complete" onclick="markTaskCompleted('task-52')">Completed</button>
+                        </li>
+                        <li id="task-53">
+                            <span class="date">Thu. 14 Nov</span> - Introduction to Seaborn – Aesthetic visualizations.
+                            <button class="complete" onclick="markTaskCompleted('task-53')">Completed</button>
+                        </li>
+                        <li id="task-54">
+                            <span class="date">Fri. 15 Nov</span> - Creating heatmaps, scatter plots, and pair plots with Seaborn.
+                            <button class="complete" onclick="markTaskCompleted('task-54')">Completed</button>
+                        </li>
+                        <li id="task-55">
+                            <span class="date">Sat. 16 Nov</span> - Hands-on project – Visualize a dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-55')">Completed</button>
+                        </li>
+                        <li id="task-56">
+                            <span class="date">Sun. 17 Nov</span> - Review and finalize project.
+                            <button class="complete" onclick="markTaskCompleted('task-56')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="month" id="november" style="display: none;">
+                <h2>November 18th - December 15th</h2>
+                <div class="week">
+                    <h3>Week 1: Advanced Pandas and Numpy</h3>
+                    <ul id="week-1-tasks">
+                        <li id="task-57">
+                            <span class="date">Mon. 18 Nov</span> - Advanced indexing and slicing in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-57')">Completed</button>
+                        </li>
+                        <li id="task-58">
+                            <span class="date">Tue. 19 Nov</span> - Working with time series data in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-58')">Completed</button>
+                        </li>
+                        <li id="task-59">
+                            <span class="date">Wed. 20 Nov</span> - Multi-indexing in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-59')">Completed</button>
+                        </li>
+                        <li id="task-60">
+                            <span class="date">Thu. 21 Nov</span> - Advanced reshaping: Stack, Unstack, Melt.
+                            <button class="complete" onclick="markTaskCompleted('task-60')">Completed</button>
+                        </li>
+                        <li id="task-61">
+                            <span class="date">Fri. 22 Nov</span> - Performance optimization in Pandas.
+                            <button class="complete" onclick="markTaskCompleted('task-61')">Completed</button>
+                        </li>
+                        <li id="task-62">
+                            <span class="date">Sat. 23 Nov</span> - Hands-on: Working with complex datasets.
+                            <button class="complete" onclick="markTaskCompleted('task-62')">Completed</button>
+                        </li>
+                        <li id="task-63">
+                            <span class="date">Sun. 24 Nov</span> - Review and practice.
+                            <button class="complete" onclick="markTaskCompleted('task-63')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 2: Exploratory Data Analysis (EDA)</h3>
+                    <ul id="week-2-tasks">
+                        <li id="task-64">
+                            <span class="date">Mon. 25 Nov</span> - Introduction to EDA – Importance and steps.
+                            <button class="complete" onclick="markTaskCompleted('task-64')">Completed</button>
+                        </li>
+                        <li id="task-65">
+                            <span class="date">Tue. 26 Nov</span> - Univariate analysis – Descriptive stats and visualizations.
+                            <button class="complete" onclick="markTaskCompleted('task-65')">Completed</button>
+                        </li>
+                        <li id="task-66">
+                            <span class="date">Wed. 27 Nov</span> - Bivariate analysis – Scatter plots, correlation, cross-tabulation.
+                            <button class="complete" onclick="markTaskCompleted('task-66')">Completed</button>
+                        </li>
+                        <li id="task-67">
+                            <span class="date">Thu. 28 Nov</span> - Multivariate analysis – Heatmaps, pair plots.
+                            <button class="complete" onclick="markTaskCompleted('task-67')">Completed</button>
+                        </li>
+                        <li id="task-68">
+                            <span class="date">Fri. 29 Nov</span> - Identifying patterns and trends in data.
+                            <button class="complete" onclick="markTaskCompleted('task-68')">Completed</button>
+                        </li>
+                        <li id="task-69">
+                            <span class="date">Sat. 30 Nov</span> - Case study: Perform EDA on a dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-69')">Completed</button>
+                        </li>
+                        <li id="task-70">
+                            <span class="date">Sun. 1 Dec</span> - Review case study and feedback.
+                            <button class="complete" onclick="markTaskCompleted('task-70')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 3: Handling Large Datasets</h3>
+                    <ul id="week-3-tasks">
+                        <li id="task-71">
+                            <span class="date">Mon. 2 Dec</span> - Strategies for working with large datasets in Python.
+                            <button class="complete" onclick="markTaskCompleted('task-71')">Completed</button>
+                        </li>
+                        <li id="task-72">
+                            <span class="date">Tue. 3 Dec</span> - Memory optimization techniques (Dtypes, chunksize).
+                            <button class="complete" onclick="markTaskCompleted('task-72')">Completed</button>
+                        </li>
+                        <li id="task-73">
+                            <span class="date">Wed. 4 Dec</span> - Using Dask for parallel computing with large datasets.
+                            <button class="complete" onclick="markTaskCompleted('task-73')">Completed</button>
+                        </li>
+                        <li id="task-74">
+                            <span class="date">Thu. 5 Dec</span> - Data visualization for large datasets.
+                            <button class="complete" onclick="markTaskCompleted('task-74')">Completed</button>
+                        </li>
+                        <li id="task-75">
+                            <span class="date">Fri. 6 Dec</span> - Hands-on project: Analyze a large dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-75')">Completed</button>
+                        </li>
+                        <li id="task-76">
+                            <span class="date">Sat. 7 Dec</span> - Review large dataset project.
+                            <button class="complete" onclick="markTaskCompleted('task-76')">Completed</button>
+                        </li>
+                        <li id="task-77">
+                            <span class="date">Sun. 8 Dec</span> - Summary and final review of large dataset handling.
+                            <button class="complete" onclick="markTaskCompleted('task-77')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 4: Introduction to Databases and SQL</h3>
+                    <ul id="week-4-tasks">
+                        <li id="task-78">
+                            <span class="date">Mon. 9 Dec</span> - Introduction to databases and SQL.
+                            <button class="complete" onclick="markTaskCompleted('task-78')">Completed</button>
+                        </li>
+                        <li id="task-79">
+                            <span class="date">Tue. 10 Dec</span> - Basic SQL commands (SELECT, INSERT, UPDATE, DELETE).
+                            <button class="complete" onclick="markTaskCompleted('task-79')">Completed</button>
+                        </li>
+                        <li id="task-80">
+                            <span class="date">Wed. 11 Dec</span> - Filtering data with WHERE, AND, OR clauses.
+                            <button class="complete" onclick="markTaskCompleted('task-80')">Completed</button>
+                        </li>
+                        <li id="task-81">
+                            <span class="date">Thu. 12 Dec</span> - Aggregating data with COUNT, SUM, AVG, MIN, MAX.
+                            <button class="complete" onclick="markTaskCompleted('task-81')">Completed</button>
+                        </li>
+                        <li id="task-82">
+                            <span class="date">Fri. 13 Dec</span> - Joins in SQL (INNER, OUTER, LEFT, RIGHT).
+                            <button class="complete" onclick="markTaskCompleted('task-82')">Completed</button>
+                        </li>
+                        <li id="task-83">
+                            <span class="date">Sat. 14 Dec</span> - SQL project: Querying a dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-83')">Completed</button>
+                        </li>
+                        <li id="task-84">
+                            <span class="date">Sun. 15 Dec</span> - Review SQL project.
+                            <button class="complete" onclick="markTaskCompleted('task-84')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="month" id="december" style="display: none;">
+                <h2>December 16th - January 12</h2>
+                <div class="week">
+                    <h3>Week 1: Capstone Project 1 – Data Cleaning and EDA</h3>
+                    <ul id="week-1-tasks">
+                        <li id="task-85">
+                            <span class="date">Mon. 16 Dec</span> - Select a real-world dataset (choose one from Kaggle or UCI Machine Learning Repository).
+                            <button class="complete" onclick="markTaskCompleted('task-85')">Completed</button>
+                        </li>
+                        <li id="task-86">
+                            <span class="date">Tue. 17 Dec</span> - Clean and preprocess the dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-86')">Completed</button>
+                        </li>
+                        <li id="task-87">
+                            <span class="date">Wed. 18 Dec</span> - Perform exploratory data analysis.
+                            <button class="complete" onclick="markTaskCompleted('task-87')">Completed</button>
+                        </li>
+                        <li id="task-88">
+                            <span class="date">Thu. 19 Dec</span> - Visualize insights from the dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-88')">Completed</button>
+                        </li>
+                        <li id="task-89">
+                            <span class="date">Fri. 20 Dec</span> - Document your findings.
+                            <button class="complete" onclick="markTaskCompleted('task-89')">Completed</button>
+                        </li>
+                        <li id="task-90">
+                            <span class="date">Sat. 21 Dec</span> - Review the project and get feedback.
+                            <button class="complete" onclick="markTaskCompleted('task-90')">Completed</button>
+                        </li>
+                        <li id="task-91">
+                            <span class="date">Sun. 22 Dec</span> - Finalize project.
+                            <button class="complete" onclick="markTaskCompleted('task-91')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 2: Capstone Project 2 – Advanced Data Analysis</h3>
+                    <ul id="week-2-tasks">
+                        <li id="task-92">
+                            <span class="date">Mon. 23 Dec</span> - Select another real-world dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-92')">Completed</button>
+                        </li>
+                        <li id="task-93">
+                            <span class="date">Tue. 24 Dec</span> - Perform advanced data analysis (statistical and visual).
+                            <button class="complete" onclick="markTaskCompleted('task-93')">Completed</button>
+                        </li>
+                        <li id="task-94">
+                            <span class="date">Wed. 25 Dec</span> - Apply advanced Pandas techniques (grouping, merging, reshaping).
+                            <button class="complete" onclick="markTaskCompleted('task-94')">Completed</button>
+                        </li>
+                        <li id="task-95">
+                            <span class="date">Thu. 26 Dec</span> - Visualize insights and trends.
+                            <button class="complete" onclick="markTaskCompleted('task-95')">Completed</button>
+                        </li>
+                        <li id="task-96">
+                            <span class="date">Fri. 27 Dec</span> - Document and summarize your findings.
+                            <button class="complete" onclick="markTaskCompleted('task-96')">Completed</button>
+                        </li>
+                        <li id="task-97">
+                            <span class="date">Sat. 28 Dec</span> - Review the project and get feedback.
+                            <button class="complete" onclick="markTaskCompleted('task-97')">Completed</button>
+                        </li>
+                        <li id="task-98">
+                            <span class="date">Sun. 29 Dec</span> - Finalize project.
+                            <button class="complete" onclick="markTaskCompleted('task-98')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 3: Introduction to Machine Learning</h3>
+                    <ul id="week-3-tasks">
+                        <li id="task-99">
+                            <span class="date">Mon. 30 Dec</span> - What is machine learning? Supervised vs unsupervised learning.
+                            <button class="complete" onclick="markTaskCompleted('task-99')">Completed</button>
+                        </li>
+                        <li id="task-100">
+                            <span class="date">Tue. 31 Dec</span> - Introduction to scikit-learn library.
+                            <button class="complete" onclick="markTaskCompleted('task-100')">Completed</button>
+                        </li>
+                        <li id="task-101">
+                            <span class="date">Wed. 1 Jan</span> - Train-test split and model evaluation.
+                            <button class="complete" onclick="markTaskCompleted('task-101')">Completed</button>
+                        </li>
+                        <li id="task-102">
+                            <span class="date">Thu. 2 Jan</span> - Linear regression basics.
+                            <button class="complete" onclick="markTaskCompleted('task-102')">Completed</button>
+                        </li>
+                        <li id="task-103">
+                            <span class="date">Fri. 3 Jan</span> - Logistic regression basics.
+                            <button class="complete" onclick="markTaskCompleted('task-103')">Completed</button>
+                        </li>
+                        <li id="task-104">
+                            <span class="date">Sat. 4 Jan</span> - Decision trees and random forests.
+                            <button class="complete" onclick="markTaskCompleted('task-104')">Completed</button>
+                        </li>
+                        <li id="task-105">
+                            <span class="date">Sun. 5 Jan</span> - Review machine learning concepts.
+                            <button class="complete" onclick="markTaskCompleted('task-105')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="week">
+                    <h3>Week 4: Hands-on Machine Learning</h3>
+                    <ul id="week-4-tasks">
+                        <li id="task-106">
+                            <span class="date">Mon. 6 Jan</span> - Select a dataset for prediction (supervised learning).
+                            <button class="complete" onclick="markTaskCompleted('task-106')">Completed</button>
+                        </li>
+                        <li id="task-107">
+                            <span class="date">Tue. 7 Jan</span> - Apply linear regression on the dataset.
+                            <button class="complete" onclick="markTaskCompleted('task-107')">Completed</button>
+                        </li>
+                        <li id="task-108">
+                            <span class="date">Wed. 8 Jan</span> - Evaluate the performance of the model.
+                            <button class="complete" onclick="markTaskCompleted('task-108')">Completed</button>
+                        </li>
+                        <li id="task-109">
+                            <span class="date">Thu. 9 Jan</span> - Try another model (logistic regression or decision trees).
+                            <button class="complete" onclick="markTaskCompleted('task-109')">Completed</button>
+                        </li>
+                        <li id="task-110">
+                            <span class="date">Fri. 10 Jan</span> - Compare the models' performance.
+                            <button class="complete" onclick="markTaskCompleted('task-110')">Completed</button>
+                        </li>
+                        <li id="task-111">
+                            <span class="date">Sat. 11 Jan</span> - Summarize your findings.
+                            <button class="complete" onclick="markTaskCompleted('task-111')">Completed</button>
+                        </li>
+                        <li id="task-112">
+                            <span class="date">Sun. 12 Jan</span> - Review and finalize project.
+                            <button class="complete" onclick="markTaskCompleted('task-112')">Completed</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
